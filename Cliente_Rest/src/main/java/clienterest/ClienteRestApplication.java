@@ -16,18 +16,18 @@ import clienterest.entidad.Videojuego;
 import clienterest.servicio.ServicioProxyJuego;
 
 @SpringBootApplication
-public class ClienteRestApplication implements CommandLineRunner{
-		@Autowired
-		private ServicioProxyJuego sp;
-	
-		@Autowired
-		private ApplicationContext context;
-		
-		@Bean
-		public RestTemplate restTemplate(RestTemplateBuilder builder) {
-			return builder.build();
-		}
-	
+public class ClienteRestApplication implements CommandLineRunner {
+	@Autowired
+	private ServicioProxyJuego sp;
+
+	@Autowired
+	private ApplicationContext context;
+
+	@Bean
+	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+		return builder.build();
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(ClienteRestApplication.class, args);
 	}
@@ -65,15 +65,15 @@ public class ClienteRestApplication implements CommandLineRunner{
 					do {
 						try {
 							texto = sc.nextLine();
-							
+
 							if (Integer.parseInt(texto) >= 0 & Integer.parseInt(texto) < 11) {
 								nota = Integer.parseInt(texto);
 								interruptor = true;
 							} else {
 								System.out.println("Introduce un numero correcto");
-								texto = sc.nextLine();
+
 							}
-						}catch(NumberFormatException e){
+						} catch (NumberFormatException e) {
 							System.out.println("Introduce numero valido(min:0  max:10)");
 						}
 					} while (!interruptor);
@@ -85,11 +85,11 @@ public class ClienteRestApplication implements CommandLineRunner{
 				case 2:
 					System.out.println("Introduzca el ID");
 					texto = sc.nextLine();
-					respues=sp.borrar(Integer.parseInt(texto));
+					respues = sp.borrar(Integer.parseInt(texto));
 					System.out.println("Se ha borrado ? " + respues);
 					break;
 				case 3:
-					videojuego=new Videojuego();
+					videojuego = new Videojuego();
 					System.out.println("Introduzca el id del videojuego a Modificar");
 					videojuego.setId(Integer.parseInt(sc.nextLine()));
 					System.out.println("Introduzca el nuevo Nombre");
@@ -98,21 +98,21 @@ public class ClienteRestApplication implements CommandLineRunner{
 					videojuego.setCompañia(sc.nextLine());
 					System.out.println("Introduzca la nueva nota");
 					videojuego.setNota(Integer.parseInt(sc.nextLine()));
-					respues= sp.modificar(videojuego);
+					respues = sp.modificar(videojuego);
 					System.out.println("Se ha podido modificar? " + respues);
 					break;
-				case 4:					
+				case 4:
 					System.out.println("Introduzca el id del videojuego a buscar");
-					texto= sc.nextLine();
-					videojuego=sp.obtener(Integer.parseInt(texto));
-					if(videojuego!=null)
+					texto = sc.nextLine();
+					videojuego = sp.obtener(Integer.parseInt(texto));
+					if (videojuego != null)
 						System.out.println(videojuego);
-					
+
 					break;
 				case 5:
 					List<Videojuego> vJuegos;
-					vJuegos=sp.listar();
-					for(Videojuego v : vJuegos)
+					vJuegos = sp.listar();
+					for (Videojuego v : vJuegos)
 						System.out.println(v.toString());
 
 					break;

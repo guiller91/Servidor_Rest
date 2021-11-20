@@ -1,29 +1,29 @@
 package serviciorest.modelo.entidad;
 
 public class Videojuego {
-	
-	private  int id;
+
+	private int id;
 	private String nombre;
 	private String compañia;
 	private int nota;
-	
+
 	public Videojuego(int id, String nombre, String compañia, int nota) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.compañia = compañia;
 		this.nota = nota;
-		
+
 	}
 
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -50,10 +50,7 @@ public class Videojuego {
 
 	@Override
 	public String toString() {
-		return "Videojuego [nombre=" + nombre + ", compañia=" + compañia + ", nota=" + nota +", id=" + id + "]";
+		return "Videojuego [nombre=" + nombre + ", compañia=" + compañia + ", nota=" + nota + ", id=" + id + "]";
 	}
-	
-	
-	
 
 }

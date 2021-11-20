@@ -1,38 +1,39 @@
 package clienterest.entidad;
 
+import java.util.Objects;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class Videojuego {
-	
-	private  int id;
+
+	private int id;
 	private String nombre;
 	private String compañia;
 	private int nota;
-	
-	public Videojuego( String nombre, String compañia, int nota) {
+
+	public Videojuego(String nombre, String compañia, int nota) {
 		super();
-		
+
 		this.nombre = nombre;
 		this.compañia = compañia;
 		this.nota = nota;
-		
+
 	}
-	public Videojuego( ) {
+
+	public Videojuego() {
 		super();
-		
-		
-		
+
 	}
 
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -59,7 +60,24 @@ public class Videojuego {
 
 	@Override
 	public String toString() {
-		return "Videojuego [nombre=" + nombre + ", compañia=" + compañia + ", nota=" + nota +", id=" + id + "]";
+		return "Videojuego [nombre=" + nombre + ", compañia=" + compañia + ", nota=" + nota + ", id=" + id + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(compañia, id, nombre, nota);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Videojuego other = (Videojuego) obj;
+		return Objects.equals(compañia, other.compañia) && id == other.id && Objects.equals(nombre, other.nombre)
+				&& nota == other.nota;
+	}
 }
