@@ -5,9 +5,7 @@
 
 [https://www.youtube.com/watch?v=g1UXsCYCMkA](https://www.youtube.com/watch?v=g1UXsCYCMkA)
 
-## Repositorio
 
-[GitHub - guiller91/Servidor_Rest: Servidor con springboot para la actividad 3 de programación de procesos y servicios](https://github.com/guiller91/Servidor_Rest)
 
 ## Objetivos
 
