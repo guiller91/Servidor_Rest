@@ -1,11 +1,5 @@
 # Actividad 3 - Servicios Rest
 
-## Miembros del grupo:
-
-- [Iván Gaitán Muñoz](https://github.com/IGaitanM)
-- [Luz Maria Lozano Asimbaya](https://github.com/luzlozas)
-- [Miguel Pérez Larren](https://github.com/miguelperezlarren)
-- [Guillermo Pérez Arias](https://github.com/guiller91)
 
 ## Video pruebas
 
